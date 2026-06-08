@@ -1,0 +1,26 @@
+[
+  {
+    "entity_code": "ca-railways-canals",
+    "reference_code": "ca-lac-r610",
+    "role": "creator",
+    "title": "Department of Railways and Canals fonds",
+    "date_expression": "1791–1964, predominant 1879–1936",
+    "repository_code": "ca-lac"
+  },
+  {
+    "entity_code": "ca-canadian-northern-railway",
+    "reference_code": "ca-lac-r610-136",
+    "role": "subject",
+    "title": "Canadian Northern Railway Co. – Route Map – Sudbury to Port Arthur",
+    "date_expression": "1875, 1906–1914",
+    "repository_code": "ca-lac"
+  },
+  {
+    "entity_code": "es-consejo-real-espana-indias",
+    "reference_code": "es-ags-crei",
+    "role": "creator",
+    "title": "Consejo Real de España e Indias",
+    "date_expression": "1774–1868 (predomina 1834–1836)",
+    "repository_code": "es-ags"
+  }
+]

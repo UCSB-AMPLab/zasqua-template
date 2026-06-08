@@ -1,0 +1,61 @@
+# Zasqua instance — capability manifest.
+#
+# This file declares which Zasqua modules are active for your instance. It is
+# the single source of truth for both the build pipeline (which data files to
+# process) and the templates (which pages, navigation links, and search
+# indices to build).
+#
+# `zasqua init` can generate a first draft by scanning your exports/ directory
+# and detecting which fields are populated. After editing, run
+# `zasqua validate` to confirm your data matches the modules you enable — a
+# mismatch (e.g. entities = true but entities.json absent) fails the build
+# with a clear message.
+#
+# The flags below match the sample dataset shipped in exports/. Adjust them to
+# your own data.
+#
+# Version: v1.0.0
+
+[ui]
+
+# UI language — BCP-47 locale tag for the site's interface language.
+# Chrome strings (navigation, buttons, error messages) render in this language.
+# Supported: "en-US" (English), "es-CO" (Colombian Spanish).
+language = "en-US"
+
+[modules]
+
+# Core (descriptions + repositories) is always required — no flag here.
+
+# Hierarchy: derive a browsable tree from the parent_reference_code field in
+# descriptions.json. The sample data has multilevel fonds, so this is on.
+hierarchy = true
+
+# Entities: ISAAR(CPF) authority records (persons, corporate bodies, families)
+# with an entity explorer. Requires entities.json + entity_links.json.
+entities = true
+
+# Entity co-occurrence graph on entity detail pages. Off by default — the
+# sample dataset is too small for a meaningful graph. Requires entities = true.
+entities_graph = false
+
+# Places: geographic authority records with coordinate data and a place
+# explorer. Requires places.json + place_links.json.
+places = true
+
+# Interactive clustered map on the place explorer. Off by default: the base
+# theme ships no base-map source, so configure one (the reference deployment
+# uses MapTiler via its overlay theme) before enabling. Requires places = true.
+places_map = false
+
+# IIIF deep-zoom viewer. Off here — the sample data ships no IIIF manifests.
+# Set to "auto" to enable the viewer per record wherever iiif_manifest_url is
+# populated in your description data.
+iiif = false
+
+# OCR full-text search. Off here — the sample data carries no OCR transcripts.
+# Set to "auto" to index the ocr_text field per record wherever it is
+# populated in your description data.
+ocr = false
+
+# Version: v1.0.0

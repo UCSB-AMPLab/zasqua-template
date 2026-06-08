@@ -1,0 +1,32 @@
+[
+  {
+    "place_code": "ca-ottawa",
+    "reference_code": "ca-lac-r610",
+    "role": "place_of_custody"
+  },
+  {
+    "place_code": "ca-sudbury",
+    "reference_code": "ca-lac-r610-136",
+    "role": "subject"
+  },
+  {
+    "place_code": "ca-port-arthur",
+    "reference_code": "ca-lac-r610-136",
+    "role": "subject"
+  },
+  {
+    "place_code": "ca-sturgeon-falls",
+    "reference_code": "ca-lac-r610-137",
+    "role": "subject"
+  },
+  {
+    "place_code": "es-simancas",
+    "reference_code": "es-ags-crei",
+    "role": "place_of_custody"
+  },
+  {
+    "place_code": "cu-la-habana",
+    "reference_code": "es-ags-crei-hacienda-expedientes-6-25",
+    "role": "subject"
+  }
+]

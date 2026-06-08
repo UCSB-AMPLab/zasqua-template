@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "code": "ca-lac",
+    "name": "Library and Archives Canada",
+    "short_name": "LAC",
+    "country": "CA",
+    "city": "Ottawa",
+    "descriptive_standard": "isadg"
+  },
+  {
+    "id": 2,
+    "code": "es-ags",
+    "name": "Archivo General de Simancas",
+    "short_name": "AGS",
+    "country": "ES",
+    "city": "Simancas",
+    "descriptive_standard": "isadg"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "zasqua-instance",
+  "version": "1.0.0",
+  "description": "Starter instance for the Zasqua archival publishing engine. Fork this repository to publish your own archive.",
+  "private": true,
+  "scripts": {
+    "build": "zasqua build",
+    "dev": "zasqua dev",
+    "fetch": "zasqua fetch",
+    "validate": "zasqua validate"
+  },
+  "keywords": [
+    "archive",
+    "archival-description",
+    "isad-g",
+    "hugo",
+    "static-site"
+  ],
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@ucsb-ampl/zasqua": "^1.1.0"
+  }
+}

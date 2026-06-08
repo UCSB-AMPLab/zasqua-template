@@ -1,0 +1,32 @@
+[
+  {
+    "entity_code": "ca-railways-canals",
+    "display_name": "Canada. Department of Railways and Canals",
+    "entity_type": "corporate_body",
+    "sort_name": "Canada. Department of Railways and Canals",
+    "dates_of_existence": "1879–1936",
+    "date_earliest": "1879",
+    "date_latest": "1936",
+    "primary_function": "government department",
+    "history": "The Department of Railways and Canals existed from 1879 to 1936. It was established on May 15, 1879 (42 Vict. c. 7, s. 4-5), when it assumed responsibilities formerly under the direction of the Department of Public Works. It was dissolved on November 2, 1936, when its functions were incorporated into the newly created Department of Transport. A Minister of the Crown headed the Department, with a Deputy Minister as the chief administrative officer. Initially it had two branches, the Railway Branch and the Canal Branch, each directed by a Chief Engineer. The Railway Branch was responsible for the construction, operation, and maintenance of government-owned railways and telegraph networks; the Canal Branch for canals and navigation systems on the Great Lakes and along the St. Lawrence, Ottawa, Trent, and Richelieu Rivers."
+  },
+  {
+    "entity_code": "ca-canadian-northern-railway",
+    "display_name": "Canadian Northern Railway Company",
+    "entity_type": "corporate_body",
+    "sort_name": "Canadian Northern Railway Company",
+    "primary_function": "railway company",
+    "history": "Canadian railway company of the late nineteenth and early twentieth centuries. It was one of three systems — together with the Grand Trunk Railways and the Canadian Government Railways — later amalgamated to form the Canadian National Railways (CNR)."
+  },
+  {
+    "entity_code": "es-consejo-real-espana-indias",
+    "display_name": "Consejo Real de España e Indias",
+    "entity_type": "corporate_body",
+    "sort_name": "Consejo Real de España e Indias",
+    "dates_of_existence": "1834–1836",
+    "date_earliest": "1834",
+    "date_latest": "1836",
+    "primary_function": "consejo consultivo",
+    "history": "El Consejo Real de España e Indias (CREI) fue creado por los Decretos de 24 de marzo de 1834 como supremo órgano consultivo de la Administración central, al que se transfirieron las competencias consultivas de los antiguos Consejos y de la Cámara de Castilla. Dependía del Secretario del Despacho de Estado en su calidad de Presidente del Consejo de Ministros. Se estructuraba en Presidente, Secretaría General, siete Secciones (Estado, Gracia y Justicia, Guerra, Marina, Hacienda, Fomento e Indias) y Archivo. Su función primordial era informar las consultas sobre asuntos gubernativos remitidas por la Reina y por los Secretarios del Despacho; sus dictámenes tenían carácter consultivo, nunca vinculante. Fue abolido por R.D. de 28 de septiembre de 1836; sus funciones pasaron al Consejo Real (1845-1858) y, más tarde, al Consejo de Estado (1858-)."
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "place_code": "ca-ottawa",
+    "display_name": "Ottawa",
+    "place_type": "city",
+    "country_code": "CA",
+    "latitude": 45.4215,
+    "longitude": -75.6972
+  },
+  {
+    "id": 2,
+    "place_code": "ca-sudbury",
+    "display_name": "Sudbury",
+    "place_type": "city",
+    "country_code": "CA",
+    "latitude": 46.4917,
+    "longitude": -80.9930
+  },
+  {
+    "id": 3,
+    "place_code": "ca-port-arthur",
+    "display_name": "Port Arthur",
+    "place_type": "city",
+    "country_code": "CA",
+    "latitude": 48.3809,
+    "longitude": -89.2477,
+    "name_variants": ["Thunder Bay"]
+  },
+  {
+    "id": 4,
+    "place_code": "ca-sturgeon-falls",
+    "display_name": "Sturgeon Falls",
+    "place_type": "town",
+    "country_code": "CA",
+    "latitude": 46.3668,
+    "longitude": -79.9201
+  },
+  {
+    "id": 5,
+    "place_code": "es-simancas",
+    "display_name": "Simancas",
+    "place_type": "municipality",
+    "country_code": "ES",
+    "latitude": 41.5908,
+    "longitude": -4.8331
+  },
+  {
+    "id": 6,
+    "place_code": "cu-la-habana",
+    "display_name": "La Habana",
+    "place_type": "city",
+    "country_code": "CU",
+    "latitude": 23.1136,
+    "longitude": -82.3666,
+    "name_variants": ["Havana"]
+  }
+]

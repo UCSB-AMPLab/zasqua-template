@@ -1,0 +1,29 @@
+# Build output and generated artefacts
+public/
+resources/
+.hugo_build.lock
+hugo_stats.json
+
+# Hugo data staged from exports/ at build time
+static/data/
+themes/base/
+assets/hugo-data/
+
+# Engine-derived artefacts written into exports/ at build time. Only the six
+# source contract files are tracked; everything else here is generated.
+exports/*
+!exports/descriptions.json
+!exports/repositories.json
+!exports/entities.json
+!exports/entity_links.json
+!exports/places.json
+!exports/place_links.json
+
+# Dependencies
+node_modules/
+
+# Engine-fetched data cache (when using a remote export source)
+.zasqua-cache/
+
+# macOS
+.DS_Store

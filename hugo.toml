@@ -1,0 +1,68 @@
+# Zasqua instance — Hugo configuration.
+#
+# This is the starter Hugo config for a Zasqua deployment. It is consumed by
+# the published engine (@ucsb-ampl/zasqua): `zasqua build` assembles the base
+# theme from the engine package into themes/base/ and renders the site.
+#
+# The site runs on the engine's neutral base theme (theme = ["base"]). The
+# base theme is complete and bilingual (English and Spanish), so a fresh fork
+# builds a fully functional, localized site with no overlay. To brand the
+# site with your own colours, fonts, and layout overrides, add an overlay
+# theme and put it first in the chain, e.g. theme = ["my-theme", "base"];
+# see section 8 of the engine's deployment guide.
+#
+# Identity strings live in [params] below and render through the base theme,
+# so you can set your institution's name and links without an overlay.
+#
+# Version: v1.0.0
+
+baseURL = "https://example.org/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+title = "Zasqua Archive"
+enableRobotsTXT = true
+
+theme = ["base"]
+
+[params]
+  # Identity strings shown across the site (header, footer, explorer labels).
+  # Replace these with your institution's details.
+  logo              = "Zasqua Archive"
+  about_url         = "https://example.org/about"
+  catalog_url       = ""
+  footer_copyright  = "© {year} Your Institution"
+  footer_credits    = "Published with Zasqua"
+  source_url        = "https://github.com/your-org/your-archive"
+  entity_code_label = "Person / Organization"
+  place_code_label  = "Place"
+
+[build]
+  writeStats = true
+  [build.buildStats]
+    enable = true
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+    disableWatch = true
+  [[module.mounts]]
+    source = "zasqua.manifest.toml"
+    target = "data/manifest.toml"
+
+[[build.cachebusters]]
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
+
+[[build.cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = 'css'
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# Version: v1.0.0

@@ -1,0 +1,32 @@
+Zasqua starter template — sample data attribution
+==================================================
+
+The sample archival descriptions shipped in exports/ are drawn from the
+published worked examples in:
+
+  International Council on Archives (ICA), ISAD(G): General International
+  Standard Archival Description, 2nd edition (Ottawa, 2000), Appendix B.
+
+The standard's copyright notice states: "Multiplication of this
+publication is free if due acknowledgement is made." This template
+reproduces two of its examples for demonstration, with acknowledgement.
+
+English example — Department of Railways and Canals fonds (records held by
+Library and Archives Canada). From the English (Canada) example in
+Appendix B.
+
+Spanish example — Consejo Real de España e Indias (records held by the
+Archivo General de Simancas; description by Eduardo Pedruelo Martín, AGS).
+From the español (España) example in the Spanish edition: ISAD(G): Norma
+Internacional General de Descripción Archivística, 2.ª edición (versión
+española, Madrid: Ministerio de Educación, Cultura y Deporte, 2000),
+Apéndice B; traducción de Asunción de Navascués Benlloch, María Dolores
+Carnicer Arribas, Blanca Desantes Fernández y Guadalupe Moreno López.
+
+Reference codes have been rewritten as clean, hierarchical slugs so they
+work as URL paths; each record preserves its original archival reference
+code in its dedicated local identifier field (ISAD(G) 3.1.1). Geographic
+coordinates are approximate locations of the named places.
+
+This sample data is provided to make a fresh fork build and render
+immediately. Replace exports/ with your own data before publishing.
