@@ -1,20 +1,31 @@
 ---
 # Colophon page content — deployer-editable institutional prose.
+# Contenido de la página de colofón — prosa institucional que edita quien despliega.
 #
-# This is sample scaffold content for the starter template. Every section
-# below is institution-specific prose that you, the deployer, should
-# replace with your own: who publishes the archive, which collections it
-# represents, how to cite it, the technology and license, and how to get
-# in touch. It is authored HERE as a Hugo markdown content page, not in a
-# theme template — the engine base template
-# (themes/base/layouts/colofon/list.html) renders this page's .Content
-# inside a prose-styled article.
+# EN: This is sample scaffold content for the starter template. Every section
+# below is institution-specific prose that you, the deployer, should replace
+# with your own — and write it in your site's language (set [ui] language in
+# zasqua.manifest.toml; also set the page title below). It is authored HERE as
+# a Hugo markdown content page, not in a theme template — the engine base
+# template (themes/base/layouts/colofon/list.html) renders this page's
+# .Content inside a prose-styled article.
 #
-# Three dynamic values stay out of the prose, supplied by engine
-# shortcodes so a version bump re-renders only this page:
-#   {{< version >}}        -> your instance version (hugo.toml [params] version)
-#   {{< engine-version >}} -> the Zasqua engine version, stamped at build time
-#   {{< year >}}           -> the current build year
+# ES: Este es contenido de muestra para la plantilla inicial. Cada sección de
+# abajo es prosa específica de tu institución que tú, quien despliega, debes
+# reemplazar con la tuya — y escríbela en el idioma de tu sitio (define [ui]
+# language en zasqua.manifest.toml; cambia también el título de la página, más
+# abajo). Se redacta AQUÍ como una página de contenido en markdown de Hugo, no
+# en una plantilla del tema — la plantilla base del motor
+# (themes/base/layouts/colofon/list.html) muestra el .Content de esta página
+# dentro de un artículo con estilo de prosa.
+#
+# EN/ES: Three dynamic values stay out of the prose, via engine shortcodes, so
+# a version bump re-renders only this page / Tres valores dinámicos quedan
+# fuera de la prosa, mediante shortcodes del motor, para que un cambio de
+# versión solo regenere esta página:
+#   {{< version >}}        -> instance version / versión de la instancia
+#   {{< engine-version >}} -> Zasqua engine version / versión del motor
+#   {{< year >}}           -> current build year / año de construcción actual
 #
 # Version: v1.0.0
 title: "Colophon"

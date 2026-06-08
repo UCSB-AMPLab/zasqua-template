@@ -1,5 +1,8 @@
 Zasqua starter template — sample data attribution
-==================================================
+Plantilla inicial de Zasqua — atribución de los datos de muestra
+==================================================================
+
+--- English ---
 
 The sample archival descriptions shipped in exports/ are drawn from the
 published worked examples in:
@@ -30,3 +33,39 @@ coordinates are approximate locations of the named places.
 
 This sample data is provided to make a fresh fork build and render
 immediately. Replace exports/ with your own data before publishing.
+
+--- Español ---
+
+Las descripciones archivísticas de muestra que vienen en exports/ se toman
+de los ejemplos completos publicados en:
+
+  Consejo Internacional de Archivos (CIA), ISAD(G): Norma Internacional
+  General de Descripción Archivística, 2.ª edición (Ottawa, 2000),
+  Apéndice B.
+
+El aviso de derechos de autor de la norma indica: «La reproducción de esta
+publicación es libre siempre que se cite la procedencia.» Esta plantilla
+reproduce dos de sus ejemplos como demostración, con su debida atribución.
+
+Ejemplo en inglés — fondo Department of Railways and Canals (documentos
+custodiados por Library and Archives Canada). Del ejemplo en inglés
+(Canadá) del Apéndice B.
+
+Ejemplo en español — Consejo Real de España e Indias (documentos
+custodiados por el Archivo General de Simancas; descripción de Eduardo
+Pedruelo Martín, AGS). Del ejemplo en español (España) de la edición
+española: ISAD(G): Norma Internacional General de Descripción Archivística,
+2.ª edición (versión española, Madrid: Ministerio de Educación, Cultura y
+Deporte, 2000), Apéndice B; traducción de Asunción de Navascués Benlloch,
+María Dolores Carnicer Arribas, Blanca Desantes Fernández y Guadalupe
+Moreno López.
+
+Los códigos de referencia se reescribieron como identificadores legibles y
+jerárquicos para que funcionen como rutas de URL; cada registro conserva su
+código de referencia archivístico original en el campo propio de
+identificador local (ISAD(G) 3.1.1). Las coordenadas geográficas son
+ubicaciones aproximadas de los lugares nombrados.
+
+Estos datos de muestra se incluyen para que un fork nuevo se construya y se
+vea de inmediato. Reemplaza exports/ con tus propios datos antes de
+publicar.

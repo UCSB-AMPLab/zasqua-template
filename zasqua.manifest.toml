@@ -1,61 +1,96 @@
 # Zasqua instance — capability manifest.
+# Instancia de Zasqua — manifiesto de capacidades.
 #
-# This file declares which Zasqua modules are active for your instance. It is
-# the single source of truth for both the build pipeline (which data files to
-# process) and the templates (which pages, navigation links, and search
-# indices to build).
+# EN: This file declares which Zasqua modules are active for your instance.
+# It is the single source of truth for both the build pipeline (which data
+# files to process) and the templates (which pages, navigation links, and
+# search indices to build). `zasqua init` can generate a first draft by
+# scanning your exports/ directory; after editing, run `zasqua validate` to
+# confirm your data matches the modules you enable — a mismatch (e.g.
+# entities = true but entities.json absent) stops the build with a clear
+# message. The flags below match the sample dataset in exports/; adjust them
+# to your own data.
 #
-# `zasqua init` can generate a first draft by scanning your exports/ directory
-# and detecting which fields are populated. After editing, run
-# `zasqua validate` to confirm your data matches the modules you enable — a
-# mismatch (e.g. entities = true but entities.json absent) fails the build
-# with a clear message.
-#
-# The flags below match the sample dataset shipped in exports/. Adjust them to
-# your own data.
+# ES: Este archivo declara qué módulos de Zasqua están activos en tu
+# instancia. Es la única referencia tanto para el proceso de construcción
+# (qué archivos de datos procesar) como para las plantillas (qué páginas,
+# enlaces de navegación e índices de búsqueda generar). `zasqua init`
+# puede generar un primer borrador a partir de tu carpeta exports/; después de
+# editar, ejecuta `zasqua validate` para confirmar que tus datos coinciden con
+# los módulos que activas — una discrepancia (p. ej. entities = true pero sin
+# entities.json) detiene la construcción con un mensaje claro. Las opciones de
+# abajo coinciden con los datos de muestra de exports/; ajústalas a tus datos.
 #
 # Version: v1.0.0
 
 [ui]
 
-# UI language — BCP-47 locale tag for the site's interface language.
-# Chrome strings (navigation, buttons, error messages) render in this language.
-# Supported: "en-US" (English), "es-CO" (Colombian Spanish).
+# EN: UI language — BCP-47 locale tag for the site's interface language.
+# This single line sets the whole interface (navigation, buttons, error
+# messages) and the <html lang> attribute. Supported: "en-US" (English),
+# "es-CO" (Colombian Spanish). Change it here — nowhere else.
+# ES: Idioma de la interfaz — etiqueta de configuración regional BCP-47.
+# Esta sola línea define toda la interfaz (navegación, botones, mensajes de
+# error) y el atributo <html lang>. Admitidos: "en-US" (inglés) y "es-CO"
+# (español colombiano). Cámbialo solo aquí.
 language = "en-US"
 
 [modules]
 
-# Core (descriptions + repositories) is always required — no flag here.
+# EN: Core (descriptions + repositories) is always required — no flag here.
+# ES: El núcleo (descripciones + repositorios) siempre es obligatorio — no se
+# declara aquí.
 
-# Hierarchy: derive a browsable tree from the parent_reference_code field in
+# EN: Hierarchy — derive a browsable tree from parent_reference_code in
 # descriptions.json. The sample data has multilevel fonds, so this is on.
+# ES: Jerarquía — deriva un árbol navegable de parent_reference_code en
+# descriptions.json. Los datos de muestra tienen fondos de varios niveles, así
+# que está activado.
 hierarchy = true
 
-# Entities: ISAAR(CPF) authority records (persons, corporate bodies, families)
-# with an entity explorer. Requires entities.json + entity_links.json.
+# EN: Entities — ISAAR(CPF) authority records (people, organizations,
+# families) with an entity explorer. Requires entities.json + entity_links.json.
+# ES: Entidades — registros de autoridad ISAAR(CPF) (personas, organizaciones,
+# familias) con un explorador de entidades. Requiere entities.json +
+# entity_links.json.
 entities = true
 
-# Entity co-occurrence graph on entity detail pages. Off by default — the
+# EN: Entity co-occurrence graph on entity detail pages. Off by default — the
 # sample dataset is too small for a meaningful graph. Requires entities = true.
+# ES: Grafo de coocurrencia en las páginas de detalle de entidad. Desactivado
+# por defecto — los datos de muestra son demasiado pocos para un grafo
+# significativo. Requiere entities = true.
 entities_graph = false
 
-# Places: geographic authority records with coordinate data and a place
+# EN: Places — geographic authority records with coordinates and a place
 # explorer. Requires places.json + place_links.json.
+# ES: Lugares — registros de autoridad geográficos con coordenadas y un
+# explorador de lugares. Requiere places.json + place_links.json.
 places = true
 
-# Interactive clustered map on the place explorer. Off by default: the base
+# EN: Interactive clustered map on the place explorer. Off by default: the base
 # theme ships no base-map source, so configure one (the reference deployment
 # uses MapTiler via its overlay theme) before enabling. Requires places = true.
+# ES: Mapa interactivo con agrupación de marcadores en el explorador de
+# lugares. Desactivado por defecto: el tema base no incluye un mapa de fondo,
+# así que configura uno (el despliegue de referencia usa MapTiler en su tema de
+# personalización) antes de activarlo. Requiere places = true.
 places_map = false
 
-# IIIF deep-zoom viewer. Off here — the sample data ships no IIIF manifests.
-# Set to "auto" to enable the viewer per record wherever iiif_manifest_url is
-# populated in your description data.
+# EN: IIIF deep-zoom viewer. Off here — the sample data ships no IIIF
+# manifests. Set to "auto" to enable the viewer per record wherever
+# iiif_manifest_url is populated.
+# ES: Visor IIIF con zoom profundo. Desactivado aquí — los datos de muestra no
+# traen manifiestos IIIF. Ponlo en "auto" para activar el visor en cada
+# registro donde iiif_manifest_url tenga valor.
 iiif = false
 
-# OCR full-text search. Off here — the sample data carries no OCR transcripts.
-# Set to "auto" to index the ocr_text field per record wherever it is
-# populated in your description data.
+# EN: OCR full-text search. Off here — the sample data carries no OCR
+# transcripts. Set to "auto" to index the ocr_text field wherever it is
+# populated.
+# ES: Búsqueda de texto completo por OCR. Desactivada aquí — los datos de
+# muestra no traen transcripciones de OCR. Ponla en "auto" para indexar el
+# campo ocr_text donde tenga valor.
 ocr = false
 
 # Version: v1.0.0

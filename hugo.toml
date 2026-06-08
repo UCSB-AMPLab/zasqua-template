@@ -1,22 +1,37 @@
 # Zasqua instance — Hugo configuration.
+# Instancia de Zasqua — configuración de Hugo.
 #
-# This is the starter Hugo config for a Zasqua deployment. It is consumed by
-# the published engine (@ucsb-ampl/zasqua): `zasqua build` assembles the base
-# theme from the engine package into themes/base/ and renders the site.
+# EN: This is the starter Hugo config for a Zasqua deployment. It is consumed
+# by the published engine (@ucsb-ampl/zasqua): `zasqua build` assembles the
+# base theme from the engine package into themes/base/ and renders the site.
+# The site runs on the engine's neutral base theme (theme = ["base"]), which
+# is complete and bilingual (English and Spanish), so a fresh fork builds a
+# fully functional, localized site with no overlay. To brand the site with
+# your own colors, fonts, and layout overrides, add an overlay theme and put
+# it first in the chain, e.g. theme = ["my-theme", "base"]; see section 8 of
+# the engine's deployment guide. Identity strings live in [params] below.
 #
-# The site runs on the engine's neutral base theme (theme = ["base"]). The
-# base theme is complete and bilingual (English and Spanish), so a fresh fork
-# builds a fully functional, localized site with no overlay. To brand the
-# site with your own colours, fonts, and layout overrides, add an overlay
-# theme and put it first in the chain, e.g. theme = ["my-theme", "base"];
-# see section 8 of the engine's deployment guide.
-#
-# Identity strings live in [params] below and render through the base theme,
-# so you can set your institution's name and links without an overlay.
+# ES: Esta es la configuración inicial de Hugo para un despliegue de Zasqua.
+# La consume el motor publicado (@ucsb-ampl/zasqua): `zasqua build` arma el
+# tema base del paquete del motor en themes/base/ y genera el sitio. El sitio
+# funciona con el tema base neutro del motor (theme = ["base"]), que está
+# completo y es bilingüe (inglés y español), así que un fork nuevo genera un
+# sitio funcional y localizado sin personalización. Para darle al sitio tus
+# colores, tipografías y plantillas, agrega un tema de personalización y
+# ponlo primero en la cadena, p. ej. theme = ["my-theme", "base"]; mira la
+# sección 8 de la guía de despliegue del motor. Los textos de identidad están
+# en [params], más abajo.
 #
 # Version: v1.0.0
 
 baseURL = "https://example.org/"
+# EN: The interface language is set in zasqua.manifest.toml ([ui] language),
+# NOT here. `zasqua build` derives Hugo's language from the manifest and
+# overrides these two values, so leave them as a sensible default.
+# ES: El idioma de la interfaz se define en zasqua.manifest.toml ([ui]
+# language), NO aquí. `zasqua build` deriva el idioma de Hugo del manifiesto y
+# sobrescribe estos dos valores, así que déjalos con un valor por defecto
+# razonable.
 languageCode = "en-US"
 defaultContentLanguage = "en"
 title = "Zasqua Archive"
@@ -25,8 +40,11 @@ enableRobotsTXT = true
 theme = ["base"]
 
 [params]
-  # Identity strings shown across the site (header, footer, explorer labels).
-  # Replace these with your institution's details.
+  # EN: Identity strings shown across the site (header, footer, explorer
+  # labels). Replace these with your institution's details.
+  # ES: Textos de identidad que aparecen en todo el sitio (encabezado, pie de
+  # página, etiquetas de los exploradores). Reemplázalos con los datos de tu
+  # institución.
   logo              = "Zasqua Archive"
   about_url         = "https://example.org/about"
   catalog_url       = ""
