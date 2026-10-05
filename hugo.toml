@@ -45,7 +45,10 @@ theme = ["base"]
   # ES: Textos de identidad que aparecen en todo el sitio (encabezado, pie de
   # página, etiquetas de los exploradores). Reemplázalos con los datos de tu
   # institución.
-  logo              = "Zasqua Archive"
+  # logo is a PATH to a logo image (not the site name — that is `title` above);
+  # omit it for a text-only wordmark. / logo es una RUTA a una imagen, no el
+  # nombre del sitio (ese es `title`); déjalo vacío para usar solo el texto.
+  logo              = "/img/logo.svg"
   about_url         = "https://example.org/about"
   catalog_url       = ""
   footer_copyright  = "© {year} Your Institution"

@@ -6,7 +6,11 @@
     "short_name": "LAC",
     "country": "CA",
     "city": "Ottawa",
-    "descriptive_standard": "isadg"
+    "descriptive_standard": "isadg",
+    "subtitle": "Department of Railways and Canals fonds",
+    "category": "Sample collection",
+    "image": "/img/collections/lac.svg",
+    "description_count": 5
   },
   {
     "id": 2,
@@ -15,6 +19,10 @@
     "short_name": "AGS",
     "country": "ES",
     "city": "Simancas",
-    "descriptive_standard": "isadg"
+    "descriptive_standard": "isadg",
+    "subtitle": "Consejo Real de España e Indias",
+    "category": "Sample collection",
+    "image": "/img/collections/ags.svg",
+    "description_count": 4
   }
 ]

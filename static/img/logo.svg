@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Archive logo placeholder">
+  <!-- Placeholder logo for the Zasqua starter template. Replace static/img/logo.svg
+       (and the [params] logo path in hugo.toml) with your institution's mark. -->
+  <rect width="48" height="48" rx="10" fill="#2f5d86"/>
+  <path d="M18 12h9l7 7v16a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#ffffff"/>
+  <path d="M27 12v7h7" fill="none" stroke="#2f5d86" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#2f5d86" stroke-width="2" stroke-linecap="round">
+    <line x1="21" y1="26" x2="31" y2="26"/>
+    <line x1="21" y1="30" x2="31" y2="30"/>
+    <line x1="21" y1="22" x2="26" y2="22"/>
+  </g>
+</svg>

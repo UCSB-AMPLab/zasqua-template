@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Sample collection image placeholder">
+  <!-- Placeholder cover for a sample collection. Replace with your own image and
+       update the repository's "image" field in exports/repositories.json. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#46568c"/>
+      <stop offset="1" stop-color="#2a3563"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g)"/>
+  <g fill="#ffffff" opacity="0.10">
+    <rect x="236" y="120" width="128" height="170" rx="4"/>
+    <rect x="252" y="138" width="96" height="18"/>
+    <rect x="252" y="166" width="96" height="10"/>
+    <rect x="252" y="184" width="96" height="10"/>
+    <rect x="252" y="202" width="96" height="10"/>
+    <rect x="252" y="232" width="60" height="10"/>
+  </g>
+  <text x="300" y="344" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" fill="#ffffff" opacity="0.65">Sample image — replace</text>
+</svg>
