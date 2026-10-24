@@ -57,6 +57,26 @@ theme = ["base"]
   entity_code_label = "Person / Organization"
   place_code_label  = "Place"
 
+  # EN: Authority records. `zasqua eac` writes an EAC-CPF record per entity and
+  # `zasqua places` a Linked Places record per place, apart from the site build.
+  # Host the records somewhere (the site itself, under /eac and /places, or a
+  # separate bucket) and set these to where they are served from; entity and
+  # place pages then link to them with a copy control. Leave them unset and the
+  # pages show a "coming soon" note instead.
+  # ES: Registros de autoridad. `zasqua eac` genera un registro EAC-CPF por
+  # entidad y `zasqua places`, un registro Linked Places por lugar. Los dos
+  # comandos se ejecutan por separado, no al generar el sitio. Aloja los
+  # registros donde prefieras (en el propio sitio, en /eac y /places, o en un
+  # bucket aparte) y pon en estas opciones la dirección en la que quedan
+  # disponibles; las páginas de entidades y de lugares muestran un enlace a
+  # cada registro, con un botón para copiar la dirección. Si dejas las opciones
+  # sin definir, las páginas muestran el aviso "Disponible próximamente".
+  # eac_base_url      = "/eac"
+  # eac_agency_name   = "Your Institution"
+  # eac_language_code = "eng"
+  # places_base_url   = "/places"
+  # places_language   = "en"
+
 [build]
   writeStats = true
   [build.buildStats]
