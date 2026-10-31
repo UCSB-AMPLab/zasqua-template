@@ -17,6 +17,6 @@
   ],
   "license": "AGPL-3.0-only",
   "dependencies": {
-    "@ucsb-ampl/zasqua": "^1.2.0"
+    "@ucsb-ampl/zasqua": "^1.5.0"
   }
 }
