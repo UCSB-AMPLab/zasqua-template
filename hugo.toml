@@ -1,29 +1,43 @@
 # Zasqua instance — Hugo configuration.
 # Instancia de Zasqua — configuración de Hugo.
 #
-# EN: This is the starter Hugo config for a Zasqua deployment. It is consumed
-# by the published engine (@ucsb-ampl/zasqua): `zasqua build` assembles the
-# base theme from the engine package into themes/base/ and renders the site.
-# The site runs on the engine's neutral base theme (theme = ["base"]), which
-# is complete and bilingual (English and Spanish), so a fresh fork builds a
-# fully functional, localized site with no overlay. To brand the site with
-# your own colors, fonts, and layout overrides, add an overlay theme and put
-# it first in the chain, e.g. theme = ["my-theme", "base"]; see section 8 of
-# the engine's deployment guide. Identity strings live in [params] below.
+# EN: This is the starter Hugo config for a Zasqua deployment. The published
+# engine (@ucsb-ampl/zasqua) reads it: `zasqua build` copies the base theme
+# from the engine package into themes/base/, and Hugo then renders the site.
+# theme = ["base"] selects the engine's neutral base theme, which is complete
+# and bilingual (English and Spanish), so a fresh fork can be built into a
+# working site, with its interface in English or Spanish, without an overlay.
+# To give the site your own colors, fonts and layouts, add an overlay theme
+# and put it first in the chain, e.g. theme = ["my-theme", "base"]; see
+# section 8 of the engine's deployment guide. Every setting below has its own
+# explanation. Settings that need a value only you can supply (a key, an
+# address, a code from your records) are commented out: remove the leading
+# "#" to use them.
 #
-# ES: Esta es la configuración inicial de Hugo para un despliegue de Zasqua.
-# La consume el motor publicado (@ucsb-ampl/zasqua): `zasqua build` arma el
-# tema base del paquete del motor en themes/base/ y genera el sitio. El sitio
-# funciona con el tema base neutro del motor (theme = ["base"]), que está
-# completo y es bilingüe (inglés y español), así que un fork nuevo genera un
-# sitio funcional y localizado sin personalización. Para darle al sitio tus
-# colores, tipografías y plantillas, agrega un tema de personalización y
-# ponlo primero en la cadena, p. ej. theme = ["my-theme", "base"]; mira la
-# sección 8 de la guía de despliegue del motor. Los textos de identidad están
-# en [params], más abajo.
+# ES: Configuración inicial de Hugo para un despliegue de Zasqua. La lee el
+# motor publicado (@ucsb-ampl/zasqua): `zasqua build` copia el tema base del
+# paquete del motor en themes/base/ y luego Hugo genera el sitio. Con theme =
+# ["base"] se usa el tema base neutro del motor, que está completo y es
+# bilingüe (inglés y español); por eso, con un fork recién hecho ya puedes
+# generar un sitio que funciona, con la interfaz en inglés o en español, sin
+# ningún tema de personalización. Para darle al sitio tus propios colores,
+# tipografías y plantillas, agrega un tema de personalización y ponlo primero
+# en la cadena, p. ej. theme = ["my-theme", "base"]; consulta la sección 8 de
+# la guía de despliegue del motor. Cada ajuste que sigue lleva su propia
+# explicación. Los que necesitan un dato que solo tú tienes (una clave, una
+# dirección, un código de tus registros) están comentados: quítales el "#" del
+# comienzo para usarlos.
 #
 # Version: v1.0.0
 
+# EN: Address the site is published at, ending in a slash. Hugo builds the
+# absolute links, the canonical addresses and the sitemap from it, and
+# `zasqua places` uses it in the @id of every place record. Replace it with
+# your site's address.
+# ES: Dirección en la que se publica el sitio, terminada en barra. Hugo arma
+# con ella los enlaces absolutos, las direcciones canónicas y el mapa del
+# sitio, y `zasqua places` la usa en el @id de cada registro de lugar.
+# Cámbiala por la dirección de tu sitio.
 baseURL = "https://example.org/"
 # EN: The interface language is set in zasqua.manifest.toml ([ui] language),
 # NOT here. `zasqua build` derives Hugo's language from the manifest and
@@ -34,54 +48,369 @@ baseURL = "https://example.org/"
 # razonable.
 languageCode = "en-US"
 defaultContentLanguage = "en"
+# EN: Site name. Hugo puts it in the <title> of every page, and the engine
+# uses it wherever the interface names the site. `zasqua mets` and
+# `zasqua eac` fall back to it for the METS creator and the EAC-CPF agency
+# when nothing else names one, and `zasqua places` cites it in every place
+# record.
+# ES: Nombre del sitio. Hugo lo pone en el <title> de cada página, y el motor
+# lo usa en todos los textos de la interfaz que nombran el sitio. `zasqua
+# mets` y `zasqua eac` recurren a él para el creador del archivo METS y la
+# institución responsable del registro EAC-CPF cuando no hay otro nombre que
+# usar, y `zasqua places` lo cita en cada registro de lugar.
 title = "Zasqua Archive"
+# EN: With this on, Hugo writes /robots.txt from the engine's template, which
+# lets every crawler in and gives the address of the sitemap. With it off,
+# Hugo writes no robots.txt.
+# ES: Con este ajuste activado, Hugo genera /robots.txt con la plantilla del
+# motor, que les permite la entrada a todos los rastreadores e indica la
+# dirección del mapa del sitio. Si lo desactivas, Hugo no genera robots.txt.
 enableRobotsTXT = true
 
+# EN: Theme chain. Hugo looks for each file from left to right, so a file in
+# an earlier theme replaces the same file in a later one. Keep "base" last
+# and put your overlay theme first.
+# ES: Cadena de temas. Hugo busca cada archivo de izquierda a derecha, así que
+# un archivo de un tema que va antes en la cadena reemplaza al mismo archivo
+# de uno que va después. Deja "base" de último y pon tu tema de
+# personalización de primero.
 theme = ["base"]
 
 [params]
-  # EN: Identity strings shown across the site (header, footer, explorer
-  # labels). Replace these with your institution's details.
-  # ES: Textos de identidad que aparecen en todo el sitio (encabezado, pie de
-  # página, etiquetas de los exploradores). Reemplázalos con los datos de tu
-  # institución.
-  # logo is a PATH to a logo image (not the site name — that is `title` above);
-  # omit it for a text-only wordmark. / logo es una RUTA a una imagen, no el
-  # nombre del sitio (ese es `title`); déjalo vacío para usar solo el texto.
-  logo              = "/img/logo.svg"
-  about_url         = "https://example.org/about"
-  catalog_url       = ""
-  footer_copyright  = "© {year} Your Institution"
-  footer_credits    = "Published with Zasqua"
-  source_url        = "https://github.com/your-org/your-archive"
+  # EN: Path to the site's logo image (not the site name; that is `title`).
+  # The engine shows it in the header beside the site name, in white over
+  # the home page photograph, on the search page and in the entity
+  # explorer's empty state. Without it the header carries the site name
+  # alone, and no image is shown in the other places.
+  # ES: Ruta de la imagen del logo del sitio (no el nombre del sitio: ese es
+  # `title`). El motor la muestra en el encabezado junto al nombre del sitio,
+  # en blanco sobre la fotografía de la página de inicio, en la página de
+  # búsqueda y en la pantalla inicial del explorador de entidades. Si la
+  # quitas, el encabezado lleva solo el nombre del sitio y en los demás
+  # lugares no se muestra ninguna imagen.
+  logo = "/img/logo.svg"
+  # EN: Address of the "About" link in the header. Without it, or with an
+  # empty value, the engine leaves the link out.
+  # ES: Dirección del enlace "Acerca" del encabezado. Si no la defines, o la
+  # dejas vacía, el motor no muestra el enlace.
+  about_url = "https://example.org/about"
+  # EN: Address of the "Cataloging" link in the header. Without it, or with
+  # an empty value, the engine leaves the link out.
+  # ES: Dirección del enlace "Catalogación" del encabezado. Si no la defines,
+  # o la dejas vacía, el motor no muestra el enlace.
+  catalog_url = ""
+  # EN: Default text of <meta name="description">, used on every page that
+  # has no description of its own. Without it those pages get an empty
+  # description.
+  # ES: Texto por defecto de <meta name="description">, que se usa en todas
+  # las páginas que no tienen una descripción propia. Si no lo defines, esas
+  # páginas quedan con la descripción vacía.
+  # description = "Digitized records from the archives of My Institution."
+  # EN: Your site's own release number, not the engine's. The {{< version >}}
+  # shortcode writes it into a page, and the engine puts it in place of
+  # {version} in the citation templates of publisher.json, which appear on
+  # description pages and in the colophon. Without it the shortcode writes
+  # nothing and {version} is left empty.
+  # ES: Número de versión de tu sitio, no el del motor. El shortcode {{<
+  # version >}} lo escribe en una página, y el motor lo pone en lugar de
+  # {version} en las plantillas de cita de publisher.json, que se muestran en
+  # las páginas de descripción y en el colofón. Si no lo defines, el shortcode
+  # no escribe nada y {version} queda vacío.
+  # version = "1.0.0"
+
+  # EN: First sentence of the footer, next to the mark. HTML is allowed, so
+  # it can carry links. Without it the engine leaves the sentence out.
+  # ES: Primera frase del pie de página, junto a la marca. Admite HTML, así
+  # que puede llevar enlaces. Si no la defines, el motor no pone esa frase.
+  # footer_tagline = "My Archive is the digital archive of <a href=\"https://example.org\">My Institution</a>."
+  # EN: Paragraph after the tagline in the footer; HTML is allowed. Without
+  # it the engine leaves the paragraph out.
+  # ES: Párrafo que va después de la primera frase del pie de página; admite
+  # HTML. Si no lo defines, el motor no pone ese párrafo.
+  footer_credits = "Published with Zasqua"
+  # EN: Copyright line of the footer; {year} is replaced with the year of
+  # the build. When the export has a publisher.json with a legal_name, the
+  # engine names that holder instead and does not read this setting. With
+  # neither, the engine uses the i18n string footer.copyright ("© {year}").
+  # ES: Línea de derechos de autor del pie de página; {year} se reemplaza por
+  # el año en que se genera el sitio. Si la exportación trae un
+  # publisher.json con legal_name, el motor pone ese nombre y no lee este
+  # ajuste. Sin ninguno de los dos, el motor usa la cadena de i18n
+  # footer.copyright ("© {year}").
+  footer_copyright = "© {year} Your Institution"
+  # EN: Mark at the left of the footer, as { src, alt, href }: the image
+  # path, its alternative text and the address it links to (leave href out
+  # for an image without a link). The engine draws it in white. Without this
+  # setting the engine uses the logo_url of publisher.json, linked to the
+  # publisher's website; with neither, the footer has no mark.
+  # ES: Marca a la izquierda del pie de página, en la forma { src, alt, href }:
+  # la ruta de la imagen, su texto alternativo y la dirección a la que
+  # enlaza (quita href si la imagen no debe llevar enlace). El motor la
+  # dibuja en blanco. Si no defines este ajuste, el motor usa el logo_url de
+  # publisher.json, con un enlace al sitio web que figura allí; sin ninguno
+  # de los dos, el pie de página va sin marca.
+  # footer_logo = { src = "/img/footer-mark.svg", alt = "My Institution", href = "https://example.org" }
+  # EN: Seals at the right of the footer, after the engine credit: a list of
+  # { src, alt, href }, with href optional. The engine draws them in white.
+  # When the setting is present the engine uses it as given, and an empty
+  # list means no seals. Without it, the engine shows the logos of the
+  # credits in publisher.json that have one.
+  # ES: Sellos a la derecha del pie de página, después del crédito del motor:
+  # una lista de { src, alt, href }, en la que href es opcional. El motor los
+  # dibuja en blanco. Si el ajuste existe, el motor lo usa tal cual, y una
+  # lista vacía quiere decir que no hay sellos. Si no lo defines, el motor
+  # muestra los logos de los créditos de publisher.json que tengan uno.
+  # footer_seals = [
+  #   { src = "/img/partner-seal.png", alt = "Partner Institution", href = "https://partner.example.org" },
+  # ]
+  # EN: Address of the "Source code" link at the end of the footer, which
+  # the engine follows with "(AGPL-3.0)". Without it the engine leaves the
+  # link out.
+  # ES: Dirección del enlace "Código fuente" del final del pie de página, al
+  # que el motor le agrega "(AGPL-3.0)". Si no la defines, el motor no
+  # muestra el enlace.
+  source_url = "https://github.com/your-org/your-archive"
+
+  # EN: Labels of the code row on entity pages and on place pages; set them
+  # to the terms your institution uses. Without them the engine uses its
+  # i18n labels (entity.fields.entityCode, place.fields.placeCode).
+  # ES: Etiquetas de la fila del código en las páginas de entidad y en las de
+  # lugar; ponles los términos que usa tu institución. Si no las defines, el
+  # motor usa sus etiquetas de i18n (entity.fields.entityCode,
+  # place.fields.placeCode).
   entity_code_label = "Person / Organization"
-  place_code_label  = "Place"
+  place_code_label = "Place"
+  # EN: Starting points that the engine offers in the entity explorer's
+  # empty state and in the places explorer's introduction: a list of
+  # { code, label }, where code is the record's code and label the name on
+  # its button. The last two names are joined with the interface language's
+  # word for "or". An item without a code or a label is skipped, and
+  # without the setting the engine shows no examples.
+  # ES: Puntos de partida que el motor ofrece en la pantalla inicial del
+  # explorador de entidades y en la introducción del explorador de lugares:
+  # una lista de { code, label }, en la que code es el código del registro y
+  # label, el nombre que lleva su botón. Los dos últimos nombres se unen con
+  # la palabra "o" del idioma de la interfaz (en español, "u" antes de un
+  # nombre que empieza por sonido de o). Un elemento sin code o sin label se
+  # omite, y sin el ajuste el motor no muestra ejemplos.
+  # entity_examples = [
+  #   { code = "ENTITY-CODE", label = "Name on the button" },
+  # ]
+  # place_examples = [
+  #   { code = "PLACE-CODE", label = "Name on the button" },
+  # ]
+  # EN: Opening view of the places explorer, as [[west, south], [east,
+  # north]] in degrees. Without it the engine fits the map to the site's
+  # places that have coordinates (at most zoom 8), or shows the whole world
+  # when none have them. A value that is not a valid box is ignored.
+  # ES: Vista inicial del explorador de lugares, en la forma [[oeste, sur],
+  # [este, norte]], en grados. Si no la defines, el motor encuadra el mapa
+  # para que se vean todos los lugares del sitio que tienen coordenadas (con
+  # zoom 8 como máximo), o muestra el mundo entero si ninguno las tiene. Un
+  # valor que no forme un recuadro válido no se tiene en cuenta.
+  # place_explorer_bounds = [[-20.0, 30.0], [10.0, 50.0]]
 
-  # EN: Authority records. `zasqua eac` writes an EAC-CPF record per entity and
-  # `zasqua places` a Linked Places record per place, apart from the site build.
-  # Host the records somewhere (the site itself, under /eac and /places, or a
-  # separate bucket) and set these to where they are served from; entity and
-  # place pages then link to them with a copy control. Leave them unset and the
-  # pages show a "coming soon" note instead.
-  # ES: Registros de autoridad. `zasqua eac` genera un registro EAC-CPF por
-  # entidad y `zasqua places`, un registro Linked Places por lugar. Los dos
-  # comandos se ejecutan por separado, no al generar el sitio. Aloja los
-  # registros donde prefieras (en el propio sitio, en /eac y /places, o en un
-  # bucket aparte) y pon en estas opciones la dirección en la que quedan
-  # disponibles; las páginas de entidades y de lugares muestran un enlace a
-  # cada registro, con un botón para copiar la dirección. Si dejas las opciones
-  # sin definir, las páginas muestran el aviso "Disponible próximamente".
-  # eac_base_url      = "/eac"
-  # eac_agency_name   = "Your Institution"
+  # EN: Stylesheets that load the site's web fonts: one address or a list,
+  # linked in this order from every page; a path on your own site
+  # ("/fonts/fonts.css") works too. With [] no web fonts are loaded.
+  # Without the setting the engine links DM Sans, Crimson Text and Cormorant
+  # Garamond from Google Fonts, but that default is deprecated and engine
+  # 2.0.0 drops it, so this file names the same fonts. If your overlay theme
+  # sets other fonts, list their stylesheets here instead. The engine always
+  # links the Material Symbols icon font, which its templates need.
+  # ES: Hojas de estilo que cargan las fuentes web del sitio: una dirección o
+  # una lista, que se enlazan en este orden desde cada página; también sirve
+  # una ruta de tu propio sitio ("/fonts/fonts.css"). Con [] no se carga
+  # ninguna fuente web. Si no defines el ajuste, el motor enlaza DM Sans,
+  # Crimson Text y Cormorant Garamond desde Google Fonts, pero ese valor por
+  # defecto está obsoleto y la versión 2.0.0 del motor lo elimina; por eso
+  # aquí se indican esas mismas fuentes. Si tu tema de personalización usa
+  # otras, pon aquí sus hojas de estilo. El motor siempre enlaza la fuente de
+  # íconos Material Symbols, que sus plantillas necesitan.
+  font_stylesheets = [
+    "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Crimson+Text:wght@400;700&family=Cormorant+Garamond:wght@300;600&display=swap",
+  ]
+
+  # EN: MapTiler basemap for the map on place pages and in the places
+  # explorer: your MapTiler API key, then the id of the map style. The
+  # engine requests https://api.maptiler.com/maps/<style id>/style.json with
+  # that key; without both values it has no basemap to draw the maps on.
+  # The key is visible in the pages, so restrict it to your site's domains
+  # in your MapTiler account.
+  # ES: Mapa base de MapTiler para el mapa de las páginas de lugar y el del
+  # explorador de lugares: tu clave de la API de MapTiler y luego el
+  # identificador del estilo del mapa. El motor pide
+  # https://api.maptiler.com/maps/<identificador>/style.json con esa clave;
+  # si falta alguno de los dos valores, no tiene mapa base sobre el cual
+  # dibujar. La clave queda a la vista en las páginas, así que en tu cuenta
+  # de MapTiler restríngela a los dominios de tu sitio.
+  # maptiler_key = "your-maptiler-key"
+  # maptiler_style_id = "your-map-style-id"
+  # EN: Cloudflare Web Analytics token. When it is set, the engine adds the
+  # Cloudflare analytics script, with this token, to every page; without it
+  # no analytics script is included. The token is public, not a credential.
+  # ES: Token de Cloudflare Web Analytics. Si lo defines, el motor agrega a
+  # todas las páginas el script de analítica de Cloudflare con este token;
+  # si no, las páginas no llevan ningún script de analítica. El token es
+  # público; no es una credencial.
+  # cf_analytics_token = "your-web-analytics-token"
+  # EN: Address that receives search queries. When it is set, the engine
+  # adds a script to the search page that sends each query to
+  # <beacon_url>?q=<query> with navigator.sendBeacon; without it no query
+  # is sent anywhere.
+  # ES: Dirección que recibe las consultas de búsqueda. Si la defines, el
+  # motor agrega a la página de búsqueda un script que envía cada consulta a
+  # <beacon_url>?q=<consulta> con navigator.sendBeacon; si no, las consultas
+  # no se envían a ninguna parte.
+  # beacon_url = "https://analytics.example.org/search"
+
+  # EN: METS documents. `zasqua mets` writes one METS file per description,
+  # apart from the site build, to public/mets/ by default. mets_base_url is
+  # the base address the files are served from: the engine links each
+  # description page to {mets_base_url}/{reference_code}.xml, with any
+  # trailing slash dropped. Without it the engine uses the record's own
+  # mets_url when the export gives one, and /mets/{reference_code}.xml,
+  # served with the site, otherwise.
+  # ES: Documentos METS. `zasqua mets` genera, aparte del sitio, un archivo
+  # METS por descripción y por defecto lo guarda en public/mets/.
+  # mets_base_url es la dirección base en la que quedan disponibles los
+  # archivos: el motor enlaza cada página de descripción a
+  # {mets_base_url}/{reference_code}.xml, sin la barra final si la tiene. Si
+  # no la defines, el motor usa el mets_url del registro cuando la exportación
+  # lo trae y, si no, /mets/{reference_code}.xml, que se publica junto con el
+  # sitio.
+  # mets_base_url = "/mets"
+  # EN: CREATOR agent named in every METS header, and the address written as
+  # its note. When the export has a publisher.json with a legal_name, the
+  # engine uses that name and the publisher's website instead. Otherwise,
+  # without these settings, it uses the site `title` and about_url (else
+  # source_url).
+  # ES: Agente creador (CREATOR) que figura en el encabezado de cada archivo
+  # METS, y dirección que se escribe como nota de ese agente. Si la
+  # exportación trae un publisher.json con legal_name, el motor usa ese
+  # nombre y el sitio web que figura allí. Si no, y no defines estos
+  # ajustes, usa el `title` del sitio y about_url (o, si falta, source_url).
+  # mets_creator_name = "My Institution"
+  # mets_creator_url = "https://example.org"
+  # EN: dc:rights written into the METS file of a record when neither the
+  # record nor its repository gives rights of their own. Without it such
+  # records carry no dc:rights.
+  # ES: Valor de dc:rights que se escribe en el archivo METS de un registro
+  # cuando ni el registro ni su repositorio indican derechos propios. Si no
+  # lo defines, esos registros no llevan dc:rights.
+  # mets_default_rights = "The catalog descriptions are free to use."
+
+  # EN: EAC-CPF records. `zasqua eac` writes one EAC-CPF record per entity,
+  # apart from the site build, to public/eac/ by default. eac_base_url is
+  # the base address the records are served from: the engine links each
+  # entity page to {eac_base_url}/{entity_code}.xml, with a button that
+  # copies the address. Set it to "/eac" to serve the records with the site.
+  # Without it the engine shows a "coming soon" note in place of the link.
+  # ES: Registros EAC-CPF. `zasqua eac` genera, aparte del sitio, un registro
+  # EAC-CPF por entidad y por defecto lo guarda en public/eac/. eac_base_url
+  # es la dirección base en la que quedan disponibles los registros: el motor
+  # enlaza cada página de entidad a {eac_base_url}/{entity_code}.xml, con un
+  # botón para copiar la dirección. Ponle "/eac" para publicar los registros
+  # junto con el sitio. Si no la defines, el motor muestra el aviso
+  # "Disponible próximamente" en lugar del enlace.
+  # eac_base_url = "/eac"
+  # EN: Maintenance agency named in every EAC-CPF record. When the export has
+  # a publisher.json with a legal_name, the engine uses that name instead;
+  # otherwise, without this setting, it uses the site `title`.
+  # ES: Institución responsable del mantenimiento que figura en cada registro
+  # EAC-CPF. Si la exportación trae un publisher.json con legal_name, el
+  # motor usa ese nombre; si no, y no defines este ajuste, usa el `title`
+  # del sitio.
+  # eac_agency_name = "My Institution"
+  # EN: Code of that agency, written as agencyCode. It must be an ISIL code
+  # (a country prefix, a hyphen and the agency's own code); any other value
+  # is ignored with a warning. Without it the records carry no agency code.
+  # ES: Código de esa institución, que se escribe como agencyCode. Debe ser
+  # un código ISIL (el prefijo del país, un guion y el código propio de la
+  # institución); cualquier otro valor se descarta con una advertencia. Si
+  # no lo defines, los registros no llevan código de institución.
+  # eac_agency_code = "XX-EXAMPLE"
+  # EN: Language of the EAC-CPF records, as a three-letter lowercase ISO
+  # 639-2 code ("eng", "spa"), declared with Latin script; any other value
+  # is ignored with a warning. Without it the records declare no language.
+  # ES: Idioma de los registros EAC-CPF, como código ISO 639-2 de tres letras
+  # minúsculas ("eng", "spa"), que se declara con escritura latina;
+  # cualquier otro valor se descarta con una advertencia. Si no lo defines,
+  # los registros no declaran idioma.
   # eac_language_code = "eng"
-  # places_base_url   = "/places"
-  # places_language   = "en"
 
+  # EN: Linked Places records. `zasqua places` writes one Linked Places file
+  # per place, apart from the site build, to public/places/ by default.
+  # places_base_url is the base address the files are served from: the
+  # engine links each place page to {places_base_url}/{place_code}.json,
+  # with a button that copies the address. Set it to "/places" to serve the
+  # files with the site. Without it the engine shows a "coming soon" note in
+  # place of the link.
+  # ES: Registros Linked Places. `zasqua places` genera, aparte del sitio, un
+  # archivo Linked Places por lugar y por defecto lo guarda en public/places/.
+  # places_base_url es la dirección base en la que quedan disponibles los
+  # archivos: el motor enlaza cada página de lugar a
+  # {places_base_url}/{place_code}.json, con un botón para copiar la
+  # dirección. Ponle "/places" para publicar los archivos junto con el sitio.
+  # Si no la defines, el motor muestra el aviso "Disponible próximamente" en
+  # lugar del enlace.
+  # places_base_url = "/places"
+  # EN: Language tag (BCP 47, such as "en") declared on every place name in
+  # the Linked Places records. The interface language is not used for it,
+  # since it says nothing about the language of the place names. Without it
+  # the names carry no language tag.
+  # ES: Etiqueta de idioma (BCP 47, como "es") que se declara en cada nombre
+  # de lugar de los registros Linked Places. Para esto no se usa el idioma de
+  # la interfaz, que no dice nada sobre el idioma de los nombres de lugar. Si
+  # no la defines, los nombres no llevan etiqueta de idioma.
+  # places_language = "en"
+
+  # EN: Home page cards. The engine builds one card per repository from its
+  # record: title, subtitle, image and a category line with the city and
+  # region, linked to the repository page (/<code>/). A table for a
+  # repository's code may set `link`, to send the card elsewhere, and
+  # `category`, to replace the category line; either key may be left out,
+  # and the title, subtitle and image always come from the record. Keep
+  # these tables at the end of [params]: TOML assigns every key after a
+  # table header to that table.
+  # ES: Tarjetas de la página de inicio. El motor arma una tarjeta por
+  # repositorio a partir de su registro: título, subtítulo, imagen y una línea
+  # de categoría con la ciudad y la región, con un enlace a la página del
+  # repositorio (/<código>/). En una tabla con el código de un repositorio
+  # puedes definir `link`, para que la tarjeta enlace a otra parte, y
+  # `category`, para cambiar la línea de categoría; cualquiera de las dos se
+  # puede omitir, y el título, el subtítulo y la imagen siempre se toman del
+  # registro. Deja estas tablas al final de [params]: en TOML, todas las
+  # claves que siguen al encabezado de una tabla pertenecen a esa tabla.
+  # [params.home_cards.my-archive]
+  #   link = "/my-archive-collection/"
+  #   category = "Featured collection"
+
+# EN: Hugo writes hugo_stats.json, the list of classes used in the rendered
+# pages, and the engine's Tailwind build reads it to decide which utility
+# classes to include. Without it, classes that appear only in the rendered
+# pages (in content or data, for instance) are left out of the stylesheet.
+# ES: Hugo genera hugo_stats.json, la lista de las clases que usan las páginas
+# generadas, y Tailwind la lee al armar la hoja de estilos del motor para
+# decidir qué clases utilitarias incluir. Sin esto, las clases que solo
+# aparecen en las páginas generadas (en el contenido o en los datos, por
+# ejemplo) quedan por fuera de la hoja de estilos.
 [build]
   writeStats = true
   [build.buildStats]
     enable = true
 
+# EN: File mounts. The first keeps the site's assets/ folder, which Hugo stops
+# mounting by default once any assets mount is declared. The second puts
+# hugo_stats.json where the Tailwind stylesheet finds it, even when the file
+# is gitignored. The third makes zasqua.manifest.toml readable by the
+# templates as data, which they check for the enabled modules.
+# ES: Montajes de archivos. El primero conserva la carpeta assets/ del sitio,
+# que Hugo deja de montar por defecto en cuanto se declara cualquier montaje
+# de assets. El segundo pone hugo_stats.json donde la hoja de estilos
+# Tailwind lo encuentra, aunque el archivo esté en .gitignore. El tercero
+# deja zasqua.manifest.toml disponible como datos para las plantillas, que
+# lo consultan para saber qué módulos están activados.
 [module]
   [[module.mounts]]
     source = "assets"
@@ -94,6 +423,11 @@ theme = ["base"]
     source = "zasqua.manifest.toml"
     target = "data/manifest.toml"
 
+# EN: While `hugo server` runs, a change to hugo_stats.json or to a PostCSS or
+# Tailwind config file makes Hugo rebuild the CSS.
+# ES: Mientras se ejecuta `hugo server`, un cambio en hugo_stats.json o en un
+# archivo de configuración de PostCSS o Tailwind hace que Hugo vuelva a
+# generar el CSS.
 [[build.cachebusters]]
   source = 'assets/notwatching/hugo_stats\.json'
   target = 'css'
@@ -102,6 +436,10 @@ theme = ["base"]
   source = '(postcss|tailwind)\.config\.js'
   target = 'css'
 
+# EN: Hugo keeps raw HTML written in Markdown content (the colophon, for
+# instance) instead of leaving it out of the page.
+# ES: Hugo conserva el HTML que se escribe dentro del contenido en Markdown
+# (el colofón, por ejemplo), en lugar de quitarlo de la página.
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
