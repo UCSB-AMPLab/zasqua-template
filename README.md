@@ -38,13 +38,13 @@ configuration, data, and any theme overrides.
 | `package.json` | Declares the Zasqua engine as a dependency |
 | `hugo.toml` | Hugo configuration and your site's identity strings |
 | `zasqua.manifest.toml` | Which modules are enabled (hierarchy, entities, places, …) |
-| `exports/` | The data contract: six sample files you replace with your own, and an optional `publisher.json` that describes the institution publishing the site |
+| `exports/` | The data contract: six sample files you replace with your own, and two optional files: `publisher.json`, which describes the institution publishing the site, and `vocabulary.json`, which labels the entity types, place types and roles your data uses |
 | `content/colofon/` | The colophon page (institutional statement) |
 
 The sample descriptions are real, published archival material (see
 `NOTICE`); the institution in `publisher.json` is fictional. Replace the
 files in `exports/` with your own before publishing; if you won't use
-`publisher.json`, delete it.
+`publisher.json` or `vocabulary.json`, delete them.
 
 ## Configure your instance
 
@@ -122,13 +122,13 @@ de tema.
 | `package.json` | Declara el motor de Zasqua como dependencia |
 | `hugo.toml` | Configuración de Hugo y los textos de identidad de tu sitio |
 | `zasqua.manifest.toml` | Qué módulos están activos (jerarquía, entidades, lugares, …) |
-| `exports/` | El contrato de datos: seis archivos de muestra, que reemplazas con los tuyos, y un `publisher.json` opcional con la información de la institución que publica el sitio |
+| `exports/` | El contrato de datos: seis archivos de muestra, que reemplazas con los tuyos, y dos opcionales: `publisher.json` (la información de la institución que publica el sitio) y `vocabulary.json` (las etiquetas de los tipos de entidad, los tipos de lugar y los roles que usan tus datos) |
 | `content/colofon/` | La página de colofón (declaración institucional) |
 
 Las descripciones de muestra son material archivístico real y publicado
 (mira `NOTICE`); la institución que figura en `publisher.json` es
 ficticia. Reemplaza los archivos de `exports/` con los tuyos antes de
-publicar; si no vas a usar `publisher.json`, bórralo.
+publicar; si no vas a usar `publisher.json`, `vocabulary.json` o ninguno de los dos, bórralos.
 
 ## Configura tu instancia
 

@@ -20,6 +20,7 @@ exports/*
 !exports/places.json
 !exports/place_links.json
 !exports/publisher.json
+!exports/vocabulary.json
 
 # Dependencies
 node_modules/
