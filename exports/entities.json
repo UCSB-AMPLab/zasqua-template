@@ -2,7 +2,7 @@
   {
     "entity_code": "ca-railways-canals",
     "display_name": "Canada. Department of Railways and Canals",
-    "entity_type": "corporate_body",
+    "entity_type": "corporate",
     "sort_name": "Canada. Department of Railways and Canals",
     "dates_of_existence": "1879–1936",
     "date_earliest": "1879",
@@ -13,7 +13,7 @@
   {
     "entity_code": "ca-canadian-northern-railway",
     "display_name": "Canadian Northern Railway Company",
-    "entity_type": "corporate_body",
+    "entity_type": "corporate",
     "sort_name": "Canadian Northern Railway Company",
     "primary_function": "railway company",
     "history": "Canadian railway company of the late nineteenth and early twentieth centuries. It was one of three systems — together with the Grand Trunk Railways and the Canadian Government Railways — later amalgamated to form the Canadian National Railways (CNR)."
@@ -21,7 +21,7 @@
   {
     "entity_code": "es-consejo-real-espana-indias",
     "display_name": "Consejo Real de España e Indias",
-    "entity_type": "corporate_body",
+    "entity_type": "corporate",
     "sort_name": "Consejo Real de España e Indias",
     "dates_of_existence": "1834–1836",
     "date_earliest": "1834",

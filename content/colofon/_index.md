@@ -19,6 +19,17 @@
 # (themes/base/layouts/colofon/list.html) muestra el .Content de esta página
 # dentro de un artículo con estilo de prosa.
 #
+# EN: After the text of this page the engine adds the sections it builds from
+# `exports/publisher.json` and `exports/repositories.json`: publisher, credits,
+# represented archives, how to cite, license, privacy, takedown policy and
+# contact, each one only when the records have its data.
+#
+# ES: Después del texto de esta página, el motor agrega las secciones que arma
+# con `exports/publisher.json` y `exports/repositories.json`: «Responsable del
+# sitio», «Créditos», «Archivos representados», «Cómo citar», «Licencia»,
+# «Privacidad y datos», «Política de retiro de contenidos» y «Contacto», cada
+# una solo cuando los registros traen los datos que necesita.
+#
 # EN/ES: Three dynamic values stay out of the prose, via engine shortcodes, so
 # a version bump re-renders only this page / Tres valores dinámicos quedan
 # fuera de la prosa, mediante shortcodes del motor, para que un cambio de
@@ -37,21 +48,8 @@ it, and the terms under which it is made available.
 
 ## Version and source
 
-This site was published with version {{< engine-version >}} of the
-[Zasqua engine](https://github.com/UCSB-AMPLab/zasqua), an open-source
-tool for publishing archival descriptions as a static website. Because
-Zasqua is licensed under the AGPL-3.0, the source code of the running
-program is available to everyone who uses it.
-
-## Represented archives
-
-List the repositories and collections this site brings together, and say
-a word about each holding institution.
-
-## How to cite
-
-Tell readers how you would like material from this archive cited, with an
-example reference.
+Say which version of this archive this is, where its source code is
+published, and link to its release notes.
 
 ## Technology
 
@@ -59,8 +57,9 @@ This archive is a set of static files — HTML, JSON, and images — with
 client-side search. It needs no application server or database at request
 time, so it is inexpensive to host and straightforward to preserve.
 
-## License and contact
+## License
 
 State the license that applies to your descriptions and digitized
-materials, and give a contact address for questions, corrections, and
-takedown requests.
+materials. You can write it here, or in `terms_of_use` in
+`exports/publisher.json`, which the engine shows under its own License
+heading; if you use the file, delete this section.

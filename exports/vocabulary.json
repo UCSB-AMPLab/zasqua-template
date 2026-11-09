@@ -1,0 +1,78 @@
+{
+  "entity_types": [
+    {
+      "code": "corporate",
+      "label": {
+        "es": "Entidad corporativa",
+        "en": "Corporate body"
+      }
+    }
+  ],
+  "place_types": [
+    {
+      "code": "city",
+      "label": {
+        "es": "Ciudad",
+        "en": "City"
+      }
+    },
+    {
+      "code": "town",
+      "label": {
+        "es": "Pueblo",
+        "en": "Town"
+      }
+    },
+    {
+      "code": "municipality",
+      "label": {
+        "es": "Municipio",
+        "en": "Municipality"
+      }
+    }
+  ],
+  "role_groups": [
+    {
+      "code": "production",
+      "label": {
+        "es": "Producción y menciones",
+        "en": "Production and mentions"
+      },
+      "order": 1
+    }
+  ],
+  "entity_roles": [
+    {
+      "code": "creator",
+      "label": {
+        "es": "Productor",
+        "en": "Creator"
+      },
+      "group": "production"
+    },
+    {
+      "code": "subject",
+      "label": {
+        "es": "Materia",
+        "en": "Subject"
+      },
+      "group": "production"
+    }
+  ],
+  "place_roles": [
+    {
+      "code": "place_of_custody",
+      "label": {
+        "es": "Lugar de custodia",
+        "en": "Place of custody"
+      }
+    },
+    {
+      "code": "subject",
+      "label": {
+        "es": "Lugar mencionado",
+        "en": "Place mentioned"
+      }
+    }
+  ]
+}

@@ -10,7 +10,8 @@ themes/base/
 assets/hugo-data/
 
 # Engine-derived artefacts written into exports/ at build time. Only the six
-# source contract files are tracked; everything else here is generated.
+# source contract files and the optional publisher.json are tracked;
+# everything else here is generated.
 exports/*
 !exports/descriptions.json
 !exports/repositories.json
@@ -18,6 +19,8 @@ exports/*
 !exports/entity_links.json
 !exports/places.json
 !exports/place_links.json
+!exports/publisher.json
+!exports/vocabulary.json
 
 # Dependencies
 node_modules/
